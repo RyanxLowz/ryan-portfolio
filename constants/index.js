@@ -13,6 +13,7 @@ export const projects = [
     imgUrl: "./planet-02.png",
     title: "Portfolio Website",
     description: "Modern fully responsive website created with Motion Framer",
+    gitHub: "https://github.com/RyanxLowz/ryan-portfolio",
     techStack: "TypeScript | NextJS | TailwindCSS | Docker",
   },
   {
