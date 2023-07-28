@@ -1,6 +1,6 @@
 import { Transition, Variants } from "framer-motion";
 
-export const navVariants = () => {
+export const navVariants = (): Variants | undefined => {
   if (window.innerWidth < 768) {
     return undefined; // Empty object for mobile view
   } else {

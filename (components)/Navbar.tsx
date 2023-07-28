@@ -7,7 +7,7 @@ import { navVariants } from "@/utils/motion";
 const Navbar = () => {
   return (
     <motion.nav
-      variants={navVariants}
+      variants={navVariants()}
       initial="hidden"
       whileInView="show"
       className={`${styles.xPaddings} py-8 relative z-100`}
