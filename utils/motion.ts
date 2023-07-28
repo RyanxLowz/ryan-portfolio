@@ -1,28 +1,42 @@
 import { Transition, Variants } from "framer-motion";
 
-export const navVariants = () =>
-  window.innerWidth < 768
-    ? {}
-    : {
-        hidden: {
-          opacity: 0,
-          y: -50,
-          transition: {
-            type: "spring",
-            stiffness: 300,
-            damping: 140,
-          },
+export const navVariants = (): {
+  hidden?: {
+    opacity: number;
+    y: number;
+    transition: { type: string; stiffness: number; damping: number };
+  };
+  show?: {
+    opacity: number;
+    y: number;
+    transition: { type: string; stiffness: number; delay: number };
+  };
+} => {
+  if (window.innerWidth < 768) {
+    return {}; // Empty object for mobile view
+  } else {
+    return {
+      hidden: {
+        opacity: 0,
+        y: -50,
+        transition: {
+          type: "spring",
+          stiffness: 300,
+          damping: 140,
         },
-        show: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            type: "spring",
-            stiffness: 80,
-            delay: 0.75,
-          },
+      },
+      show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: "spring",
+          stiffness: 80,
+          delay: 0.75,
         },
-      };
+      },
+    };
+  }
+};
 
 export const slideIn = (
   direction: string,
