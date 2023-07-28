@@ -1,8 +1,12 @@
 import { Transition, Variants } from "framer-motion";
 
-export const navVariants = (): Variants => {
+export const navVariants = () => {
   if (window.innerWidth < 768) {
-    return {}; // Empty object for mobile view
+    return {
+      show:{
+        opacity: 1,
+      }
+    }; // Empty object for mobile view
   } else {
     return {
       hidden: {
