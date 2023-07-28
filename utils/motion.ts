@@ -1,3 +1,5 @@
+"use client";
+
 import { Transition, Variants } from "framer-motion";
 
 export const navVariants = (): Variants | undefined => {
