@@ -1,17 +1,6 @@
 import { Transition, Variants } from "framer-motion";
 
-export const navVariants = (): {
-  hidden?: {
-    opacity?: number;
-    y?: number;
-    transition?: { type: string; stiffness: number; damping: number };
-  };
-  show?: {
-    opacity?: number;
-    y?: number;
-    transition?: { type: string; stiffness: number; delay: number };
-  };
-} => {
+export const navVariants = (): Variants => {
   if (window.innerWidth < 768) {
     return {}; // Empty object for mobile view
   } else {
@@ -38,13 +27,12 @@ export const navVariants = (): {
   }
 };
 
-
 export const slideIn = (
   direction: string,
   type: string,
   delay: number,
   duration: number
-) =>
+): Variants =>
   window.innerWidth < 768
     ? {}
     : {
@@ -68,10 +56,7 @@ export const slideIn = (
 export const staggerContainer = (
   staggerChildren: number,
   delayChildren: number
-): {
-  hidden: {};
-  show: { transition: { staggerChildren: number; delayChildren: number } } | {};
-} => ({
+): Variants => ({
   hidden: {},
   show:
     window.innerWidth < 768
@@ -84,7 +69,7 @@ export const staggerContainer = (
         },
 });
 
-export const textVariant = (delay: number) =>
+export const textVariant = (delay: number): Variants =>
   window.innerWidth < 768
     ? {}
     : {
@@ -160,18 +145,7 @@ export const fadeIn = (
         },
       };
 
-export const planetVariants = (
-  direction: string
-): {
-  hidden: { x: string; rotate: number };
-  show:
-    | {
-        x: number;
-        rotate: number;
-        transition: { type: string; duration: number; delay: number };
-      }
-    | {};
-} => ({
+export const planetVariants = (direction: string): Variants => ({
   hidden:
     window.innerWidth >= 768
       ? {
