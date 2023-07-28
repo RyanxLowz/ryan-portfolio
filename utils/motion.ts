@@ -2,14 +2,14 @@ import { Transition, Variants } from "framer-motion";
 
 export const navVariants = (): {
   hidden?: {
-    opacity: number;
-    y: number;
-    transition: { type: string; stiffness: number; damping: number };
+    opacity?: number;
+    y?: number;
+    transition?: { type: string; stiffness: number; damping: number };
   };
   show?: {
-    opacity: number;
-    y: number;
-    transition: { type: string; stiffness: number; delay: number };
+    opacity?: number;
+    y?: number;
+    transition?: { type: string; stiffness: number; delay: number };
   };
 } => {
   if (window.innerWidth < 768) {
@@ -37,6 +37,7 @@ export const navVariants = (): {
     };
   }
 };
+
 
 export const slideIn = (
   direction: string,
